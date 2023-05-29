@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 const Callback: React.FC = () => {
   useEffect(() => {
-    const handleAuth = () => {
+    const handleAuth = async () => {
       const params = new URLSearchParams(window.location.hash.substr(1));
       const accessToken = params.get('access_token');
       const tokenType = params.get('response_type') || '';
@@ -14,7 +14,7 @@ const Callback: React.FC = () => {
       }
 
       // Redirect the user to the desired page after successful authorization
-      window.location.href = '/home';
+      window.location.href = '/user';
     };
 
     handleAuth();
